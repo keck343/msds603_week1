@@ -30,15 +30,15 @@ def create_or_update_environment(ssh):
 def git_clone(ssh):
     # ---- HOMEWORK ----- #
     stdin, stdout, stderr = ssh.exec_command("git --version")
-    if (b"" is stderr.read()):
-        git_clone_command = "git clone https://github.com/" + \
-                            git_user_id + "/" + git_repo_name + ".git"
-        stdin, stdout, stderr = ssh.exec_command(git_clone_command)
+    #if (b"" is stderr.read()):
+        #git_clone_command = "git clone https://github.com/" + \
+                        #    git_user_id + "/" + git_repo_name + ".git"
+    #    stdin, stdout, stderr = ssh.exec_command(git_clone_command)
 
     if (b"" is stderr.read()):
-    if isdir(expanduser("2019-msds603-example")) == False:
-        git_clone_command = "git clone https://github.com/" + git_user_id + "/" + git_repo_name + ".git"
-        stdin, stdout, stderr = ssh.exec_command(git_clone_command)
+        if isdir(expanduser("2019-msds603-example")) == False:
+            git_clone_command = "git clone https://github.com/" + git_user_id + "/" + git_repo_name + ".git"
+            stdin, stdout, stderr = ssh.exec_command(git_clone_command)
     print(stdout.read())
     print(stderr.read())
     print(os.getcwd())
