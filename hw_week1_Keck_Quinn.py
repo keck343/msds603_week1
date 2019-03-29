@@ -38,12 +38,20 @@ def git_clone(ssh):
         stdin, stdout, stderr = ssh.exec_command(test)
         out = stdout.read()
         if(b'exist' in out):
+            print(stdout.read())
+            print('exists')
             git_directory = "cd " + git_repo_name + " ; git pull origin"
             stdin, stdout, stderr = ssh.exec_command(git_directory)
+            print(stdout.read())
+            print(stderr.read())
         else:
+            print(stdout.read())
+            print("no")
             clone = "git clone https://github.com/" + git_user_id
             repo = "/" + git_repo_name + ".git"
             stdin, stdout, stderr = ssh.exec_command(clone + repo)
+            print(stdout.read())
+            print(stderr.read())
 
 
 def main():
