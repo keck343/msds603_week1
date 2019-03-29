@@ -1,3 +1,9 @@
+ec2_address = "ec2-54-185-34-39.us-west-2.compute.amazonaws.com"
+user = "ec2-user"
+key_file = "/Desktop/msds697.pem"
+git_repo_owner = "keck343" #"MSDS698"
+git_repo_name = "msds603_week1" # "2019-msds603-example" # "msan603_test"
+git_user_id = "dianewoodbridge"
 orig_coord = '37.7909,-122.3925'
 dest_coord = '37.7765,-122.4506'
 output_file_name = 'output.txt'
